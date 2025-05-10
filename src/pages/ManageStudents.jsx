@@ -61,8 +61,8 @@ export default function ManageStudents() {
   });
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">Manage Students</h2>
+    <div className="p-6 min-h-screen bg-white">
+      <h2 className="text-2xl font-bold mb-4 text-black">Manage Students</h2>
 
       {/* Upload CSV and Add Student Button */}
       <div className="mb-6 flex items-center justify-between">
@@ -71,7 +71,7 @@ export default function ManageStudents() {
             type="file"
             accept=".csv"
             onChange={handleCsvUpload}
-            className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+            className="block text-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
           />
           <button
             onClick={() => alert('Upload functionality not implemented yet')}
@@ -91,7 +91,7 @@ export default function ManageStudents() {
       {/* Add Student Form */}
       {isFormVisible && (
         <div className="mb-6">
-          <h3 className="text-lg font-semibold mb-2">Add/Edit Student</h3>
+          <h3 className="text-lg font-semibold mb-2 text-gray-800">Add/Edit Student</h3>
           <input
             type="text"
             placeholder="Name"
@@ -122,7 +122,7 @@ export default function ManageStudents() {
           placeholder="Search by ID, Name, or Vaccination Status"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
         />
       </div>
 
@@ -140,10 +140,10 @@ export default function ManageStudents() {
         <tbody>
           {filteredStudents.map((student) => (
             <tr key={student.studentId} className="border-b">
-              <td className="px-4 py-2 text-center">{student.studentId}</td>
-              <td className="px-4 py-2 text-center">{student.name}</td>
-              <td className="px-4 py-2 text-center">{student.className}</td>
-              <td className="px-4 py-2 text-center">{student.vaccinated}</td>
+              <td className="px-4 py-2 text-center text-gray-800">{student.studentId}</td>
+              <td className="px-4 py-2 text-center text-gray-800">{student.name}</td>
+              <td className="px-4 py-2 text-center text-gray-800">{student.className}</td>
+              <td className="px-4 py-2 text-center text-gray-800">{student.vaccinated}</td>
               <td className="px-4 py-2 text-center space-x-2">
                 <button
                   onClick={() => handleMarkVaccinated(student.studentId)}

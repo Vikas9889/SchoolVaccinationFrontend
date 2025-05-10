@@ -49,8 +49,8 @@ export default function VaccinationDrives() {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">Vaccination Drives</h2>
+    <div className="p-6 min-h-screen bg-white">
+      <h2 className="text-2xl font-bold mb-4 text-black">Vaccination Drives</h2>
 
       {/* Toggle Add/Edit Drive Form */}
       <div className="mb-6">
@@ -65,7 +65,7 @@ export default function VaccinationDrives() {
       {/* Add/Edit Drive Form */}
       {isFormVisible && (
         <div className="mb-6">
-          <h3 className="text-lg font-semibold mb-2">{newDrive.id ? 'Edit Drive' : 'Schedule a New Drive'}</h3>
+          <h3 className="text-lg font-semibold mb-2 text-gray-800">{newDrive.id ? 'Edit Drive' : 'Schedule a New Drive'}</h3>
           <input
             type="text"
             placeholder="Drive Name"
@@ -111,7 +111,7 @@ export default function VaccinationDrives() {
 
       {/* Drives List */}
       <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Scheduled Drives</h3>
+        <h3 className="text-lg font-semibold mb-2 text-gray-800">Scheduled Drives</h3>
         <button
           onClick={handleUpdateExpired}
           className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition mb-4"
@@ -133,12 +133,12 @@ export default function VaccinationDrives() {
           <tbody>
             {drives.map((drive) => (
               <tr key={drive.id} className="border-b">
-                <td className="px-4 py-2 text-center">{drive.name}</td>
-                <td className="px-4 py-2 text-center">{drive.vaccine}</td>
-                <td className="px-4 py-2 text-center">{drive.date}</td>
-                <td className="px-4 py-2 text-center">{drive.doses}</td>
-                <td className="px-4 py-2 text-center">{drive.classes}</td>
-                <td className="px-4 py-2 text-center">
+                <td className="px-4 py-2 text-center text-gray-800">{drive.name}</td>
+                <td className="px-4 py-2 text-center text-gray-800">{drive.vaccine}</td>
+                <td className="px-4 py-2 text-center text-gray-800">{drive.date}</td>
+                <td className="px-4 py-2 text-center text-gray-800">{drive.doses}</td>
+                <td className="px-4 py-2 text-center text-gray-800">{drive.classes}</td>
+                <td className="px-4 py-2 text-center text-gray-800">
                   {drive.expired ? 'Expired' : 'Active'}
                 </td>
                 <td className="px-4 py-2 text-center space-x-2">
